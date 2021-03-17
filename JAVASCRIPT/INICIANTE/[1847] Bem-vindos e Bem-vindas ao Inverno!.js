@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('dev/stdin/file.txt', 'utf8')
+var lines = input.split('\n')
+
+line = lines[0].split(' ')
+var temp1 = parseInt(line[0])
+var temp2 = parseInt(line[1])
+var temp3 = parseInt(line[2])
+
+if(temp2 < temp1 && temp3 >= temp2) console.log(':)')
+else if(temp2 > temp1 && temp3 <= temp2) console.log(':(')
+else if(temp2 > temp1 && temp3 > temp2 && (temp3 - temp2) < (temp2 - temp1))console.log(':(')
+else if(temp2 > temp1 && temp3 > temp2 && (temp3 - temp2) >= (temp2 - temp1)) console.log(':)')
+else if(temp2 < temp1 && temp3 < temp2 && (temp2 - temp3) < (temp1 - temp2)) console.log(':)')
+else if(temp2 < temp1 && temp3 < temp2 && (temp2 - temp3) >= (temp1 - temp2)) console.log(':(')
+else if(temp2 == temp1 && temp3 > temp2) console.log(':)')
+else if(temp2 == temp1 && temp3 < temp2) console.log(':(')
+else console.log(':(')
