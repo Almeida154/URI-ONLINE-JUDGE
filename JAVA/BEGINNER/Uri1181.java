@@ -1,0 +1,26 @@
+package Beginner;
+
+// Line in Matrix
+
+import java.util.Scanner;
+public class Uri1181 {
+	public static void main (String[]args) {
+		Scanner in = new Scanner (System.in);
+		int linhax; 
+		double m[][] = new double[12][12];
+		String letra;
+		linhax = in.nextInt();
+		letra = in.next();
+		for(int L=0; L<12; L++) {
+			for(int C=0; C<12; C++) {
+				m[L][C] = in.nextDouble();
+			}
+		}
+		double soma=0;
+		for(int C=0; C<12; C++) {
+			soma+=m[linhax][C];
+		}
+		if(letra.equals("S")) System.out.printf("%.1f\n", soma);
+		if(letra.equals("M")) System.out.printf("%.1f\n", soma/12);
+	}
+}
